@@ -1,4 +1,3 @@
-
 package JAVA_15_Stack;
 import java.util.Stack;
 public class JAVA_02_Operations{
@@ -115,6 +114,19 @@ public class JAVA_02_Operations{
             st.push(st2.pop());
         }
     }
+    static void reverse(Stack<Integer> st){
+        Stack<Integer> st2 = new Stack<>();
+        Stack<Integer> st3 = new Stack<>();
+        while(!st.isEmpty()){
+            st2.push(st.pop());
+        }
+        while(!st2.isEmpty()){
+            st3.push(st2.pop());
+        }
+        while(!st3.isEmpty()){
+            st.push(st3.pop());
+        }
+    }
     static void main() {
         Stack<Integer> st = new Stack<>();
         insertAtTop(st, 10);
@@ -133,5 +145,7 @@ public class JAVA_02_Operations{
         delete(st, 2);
         traverseBT(st);
         get(st, 2);
+        reverse(st);
+        traverseBT(st);
     }
 }
